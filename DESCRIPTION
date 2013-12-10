@@ -1,7 +1,7 @@
 Package: eeptools
 Type: Package
 Title: Convenience functions for education data
-Version: 0.3
+Version: 0.3.1
 Date: 2013-12-10
 Authors@R: c(person(c("Jason", "P."), "Becker", role = c("ctb"),
     email = "jason+sitemail@jbecker.co"),
@@ -24,10 +24,10 @@ Collate: 'age_calc.R' 'autoplot.lm.R' 'cleanTex.R' 'cutoff.R'
         'moves_calc.R' 'plotForWord.R' 'remove_char.R' 'statamode.R'
         'theme_dpi.R' 'theme_dpi_map.R' 'theme_dpi_map2.R'
         'theme_dpi_mapPNG.R' 'thresh.R'
-Packaged: 2013-12-09 05:49:29 UTC; Jared
+Packaged: 2014-02-23 19:56:16 UTC; Jared
 Author: Jason P. Becker [ctb],
   Jared E. Knowles [aut, cre]
 Maintainer: Jared E. Knowles <jknowles@gmail.com>
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2013-12-09 08:24:06
+Date/Publication: 2014-02-23 21:07:50
