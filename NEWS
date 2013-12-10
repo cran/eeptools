@@ -1,24 +1,33 @@
-shiny 0.5.0
---------------------------------------------------------------------------------
+eeptools 0.3
+--------------------------
 
-* License for Shiny changed to GPL >= 2, and a few files are dual-licensed
-  under the GPL >= 2 and BSD 3-clause.
+* unit tests for decomma, gelmansim, and statamode using `testthat` package
 
-* Switch from websockets package for handling websocket connections to httpuv.
+* statamode updated to work with data.table
 
-* New method for detecting hidden output objects. Instead of checking that
-  height and width are 0, it checks that the object or any ancestor in the DOM
-  has style display:none.
+* age_calc function from Jason Becker given new precision option
 
-* Add `clientData` reactive values object, which carries information about the
-  client. This includes the hidden status of output objects, height/width plot
-  output objects, and the URL of the browser.
+* moves_calc function from Jason Becker
 
-* Add `parseQueryString()` function.
+* gelmansim function to do post-estimation prediction on new data from model objects using functionality in the `arm` package
 
-* Add `renderImage()` function for sending arbitrary image files to the client,
-  and its counterpart, `imageOutput()`.
+* lag_data function to create groupwise nested lags quickly
 
-* Add support for high-resolution (Retina) displays.
+eeptools 0.2
+---------------
 
-* Fix bug #55, where `renderTable()` would throw error with an empty data frame.
+* new functions for building maps with shapefiles including mapmerge to merge a dataframe and a shapefile, and ggmapmerge to conver this to a document for making a map in ggplot2
+
+* statamode updated to allow for multiple methods for handling multiple modes
+
+* remove_stars deleted and replaced with remove_char to allow for users to specify an arbitrary character string to be removed
+
+* add plotForWord function to export plots in a Windows MetaFile for inclusion in Microsoft Office documents
+
+* add age_calc function to allow calculating the age of a vector of birthdates relative to the current date
+
+* fix typos in documentation
+
+* fix startup message behavior
+
+* remove dependencies of the package dramatically so loading is faster and more lightweight
