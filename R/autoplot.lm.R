@@ -10,11 +10,10 @@
 ##' @seealso \code{\link{plot.lm}} which this function mimics
 ##' @export
 ##' @import ggplot2
-##' @import grid
 ##' @examples
 ##' # Univariate
 ##' a <- runif(1000)
-##' b <- 7*a+rnorm(1)
+##' b <- 7 * a + rnorm(1)
 ##' mymod <- lm(b~a)
 ##' autoplot(mymod)
 ##' # Multivariate
@@ -29,7 +28,7 @@ autoplot.lm <- function(object, which=c(1:6), mfrow=c(3,2), ...){
   g1 <- ggplot(df, aes(.fitted, .resid)) +
     geom_point()  +
     geom_smooth(se=FALSE, method = "loess") +
-    geom_hline(linetype=2, size=.2) +
+    geom_hline(yintercept = 0, linetype=2, size=.2) +
     scale_x_continuous("Fitted Values") +
     scale_y_continuous("Residual") +
     labs(title="Residuals vs Fitted")+
@@ -62,7 +61,7 @@ autoplot.lm <- function(object, which=c(1:6), mfrow=c(3,2), ...){
   g5 <- ggplot(df, aes(.hat, .stdresid)) +
     geom_point() +
     geom_smooth(se=FALSE, method = "loess") +
-    geom_hline(linetype=2, size=.2) +
+    geom_hline(yintercept = 0, linetype=2, size=.2) +
     scale_x_continuous("Leverage") +
     scale_y_continuous("Standardized Residuals") +
     labs(title="Residuals vs Leverage")+theme_dpi()
@@ -79,11 +78,11 @@ autoplot.lm <- function(object, which=c(1:6), mfrow=c(3,2), ...){
   if (prod(mfrow)>1) {
     mypos <- expand.grid(1:mfrow[1], 1:mfrow[2])
     mypos <- mypos[with(mypos, order(Var1)), ]
-    grid::pushViewport(grid::viewport(layout = grid.layout(mfrow[1], mfrow[2])))
+    grid::pushViewport(grid::viewport(layout = grid::grid.layout(mfrow[1], mfrow[2])))
     formatter <- function(.){}
   } else {
     mypos <- data.frame(matrix(1, length(which), 2))
-    grid::pushViewport(grid::viewport(layout = grid.layout(1, 1)))
+    grid::pushViewport(grid::viewport(layout = grid::grid.layout(1, 1)))
     formatter <- function(.) {
       .dontcare <- readline("Hit <Return> to see next plot: ")
       grid::grid.newpage()
@@ -92,7 +91,8 @@ autoplot.lm <- function(object, which=c(1:6), mfrow=c(3,2), ...){
   j <- 1
   for (i in which){
     formatter()
-    print(plots[[i]], vp=viewport(layout.pos.row=mypos[j,][1], layout.pos.col=mypos[j,][2]))
+    print(plots[[i]], vp=grid::viewport(layout.pos.row=mypos[j,][1], 
+                                        layout.pos.col=mypos[j,][2]))
     j <- j+1
   }
 }
