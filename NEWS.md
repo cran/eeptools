@@ -1,5 +1,16 @@
 # NEWS
 
+## eeptools 1.0.0
+
+### Deprecated functions
+- Thanks to new `ggplot2` theme options, the `theme_dpi` functions are now just 
+wrappers for `theme_bw`
+
+### Bug Fixes
+
+- Fixed logical test in `age_calc` (GH #32)
+- Fixed issue with calls to library in examples (GH #33)
+
 ## eeptools 0.9.1
 
 ### Bug Fixes
