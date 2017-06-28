@@ -1,5 +1,23 @@
 # NEWS
 
+## eeptools 1.1.0
+
+### Added
+A CONTRIBUTING.md file modeled after the excellent example in the `rio` package 
+by @leeper
+
+### Bug fixes
+- Fix compatibiltiy issue for `leading_zero` function with latest version of R
+
+### Deprecated functions
+- Thanks to new and better tools the mapping functions `mapmerge` and `ggmapmerge` 
+are no longer necessary thanks to `geom_map` and further enhancements to 
+`ggplot2`
+
+## eeptools 1.0.1
+
+- Revise `readme.rmd` to include plots in package build
+
 ## eeptools 1.0.0
 
 ### Deprecated functions

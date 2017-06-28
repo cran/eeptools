@@ -26,7 +26,7 @@ stuatt
 \description{
 A synthetic dataset of student attributes from the Strategic Data 
 Project which includes records with errors to practice data cleaning and 
-impelmenting business rules for consistency in data.
+implementing business rules for consistency in data.
 }
 \details{
 This is the non-clean version of the data to allow for implementing 
@@ -40,4 +40,3 @@ head(stuatt)
 Visit the Strategic Data Project online at:  \url{http://sdp.cepr.harvard.edu/}
 }
 \keyword{datasets}
-
