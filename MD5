@@ -1,6 +1,6 @@
-f0ae02ad1b7aa833c8b6ebce5b8e0716 *DESCRIPTION
+7e345c8d00078f3d38386c7a5e4b9c71 *DESCRIPTION
 bfe1e2245b23782c975abb3e74f087e8 *NAMESPACE
-752f9f502b7bfb46eb4f4f39bedda06f *NEWS.md
+cbab2d9bc16b247efdf2fc6030de7c3d *NEWS.md
 f49a6873522f0e43dfb6ebf60fae4708 *R/age_calc.R
 2508ac57a8a49ce48a479bfc811ba05f *R/autoplot.lm.R
 aedf4e7230394e4008be5e33ae863ee9 *R/cleanTex.R
@@ -29,9 +29,9 @@ de4b35448cdff26205dce2d422dc175b *README.md
 8c1642525b7f9b84864027420c0c3e36 *data/midsch.rda
 0cca0ec39cfe9c0b73ba8107502fbe3f *data/stuatt.rda
 bc301ae648b28ea079dad1ba167a8de3 *data/stulevel.rda
-ec86b9190e4133807d8c3f4b5c3178c5 *inst/doc/intro.R
-00b38875d3fa525eec9dc309a889a1a1 *inst/doc/intro.Rmd
-97948c6dcd3f98c1fabef8483508a690 *inst/doc/intro.html
+8503371b75c114498b2c6f6d528c6f6f *inst/doc/intro.R
+6de2e7f4ac253a56e2d9ce882810be45 *inst/doc/intro.Rmd
+ab297318a4b5039ba966310500aa7a30 *inst/doc/intro.html
 7b351f60f2123d5584d260b333b19a94 *man/age_calc.Rd
 a449b88b0e66bad9510f378334783ecc *man/autoplot.lm.Rd
 d54de7591416f4fae122874d3a79efcb *man/cleanTex.Rd
@@ -69,9 +69,9 @@ cb8a1458738a5e2df9aa0e271e3b5b2b *tests/test-all.R
 d73d9c8e3b788eafe5d2c98d4838a6af *tests/testthat/test-gelmansim.R
 fcba3410a32a11bf125f6823dfd5b3fb *tests/testthat/test-lintr.R
 1336ee068c516e781085b32e1d29dc7f *tests/testthat/test-plots.R
-720749c2a56cb9b51985a475afecc913 *tests/testthat/test-statamode.r
+46a90fc0c55e098ec90417c36b4b3efa *tests/testthat/test-statamode.r
 572f65b4ef52895078968d1cc4a39375 *tests/testthat/test-utils.R
 deb5e41e6bd84fa93ce4ab7160125b7e *tools/readme/README-crossplot-1.png
 035b24e74ef8fc370640145e759fca36 *tools/readme/README-lmautoplot-1.png
 681d7314b68b5dfbd186acb03d2fdf79 *tools/readme/README-map-1.png
-00b38875d3fa525eec9dc309a889a1a1 *vignettes/intro.Rmd
+6de2e7f4ac253a56e2d9ce882810be45 *vignettes/intro.Rmd

@@ -81,17 +81,6 @@ cases$group <- factor(cases$group)
 sim.results <- gelmansim(mod = M3, newdata = cases, n.sims=200, na.omit=TRUE)
 head(sim.results)
 
-## ----map-----------------------------------------------------------------
-crimes <- data.frame(state = tolower(rownames(USArrests)), USArrests)
-require(reshape) # for melt
-crimesm <- melt(crimes, id = 1)
-states_map <- map_data("state")
-p1 <- ggplot(crimes, aes(map_id = state)) + geom_map(aes(fill = Murder), 
-                                                     linetype = 1, map = states_map) + 
-       expand_limits(x = states_map$long, y = states_map$lat) + labs(title="USA Crime")
-p1 <- p1 + coord_map()
-p1 + theme_dpi_map()
-
 ## ----lmautoplot----------------------------------------------------------
 data(mpg)
 mymod <- lm(cty~displ + cyl + drv, data=mpg)
@@ -104,6 +93,8 @@ sampDat <- data.frame(cbind(x=seq(1,3,by=1), y=sample(LETTERS[6:8], 60,
 varnames<-c('Quality','Grade')
 crosstabplot(sampDat, "y", "fac", varnames = varnames,  label = TRUE, 
              title = "Crosstab Plot", shade = FALSE)
+
+## ------------------------------------------------------------------------
 crosstabplot(sampDat, "y", "fac", varnames = varnames,  label = FALSE, 
              title = "Crosstab Plot", shade = TRUE)
 
