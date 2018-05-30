@@ -1,5 +1,16 @@
 # NEWS
 
+## eeptools 1.2.0
+
+### Added
+
+- New function `isid` for determining if a combination of variables uniquely define 
+the rows in a dataframe
+
+### Bug Fixes
+- Fixed error in `statamode` with `method = "last"` thanks to PR from @larcat
+- Fix import compatibility with ggplot2
+
 ## eeptools 1.1.1
 
 - Minor fixes for CRAN repository compliance in dependencies contained in vignettes

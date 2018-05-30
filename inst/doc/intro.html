@@ -12,7 +12,7 @@
 
 <meta name="author" content="Jared E. Knowles" />
 
-<meta name="date" content="2018-01-26" />
+<meta name="date" content="2018-05-30" />
 
 <title>Tools for Education Data in R</title>
 
@@ -20,46 +20,256 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
 
-<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#header {
+text-align: center;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
 
 </head>
 
@@ -70,7 +280,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Tools for Education Data in R</h1>
 <h4 class="author"><em>Jared E. Knowles</em></h4>
-<h4 class="date"><em>2018-01-26</em></h4>
+<h4 class="date"><em>2018-05-30</em></h4>
 
 
 
@@ -81,216 +291,215 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="administrative-data-functions" class="section level1">
 <h1>Administrative Data Functions</h1>
 <p>For analysts using unit-record data of some type, there are several <code>calc</code> functions which automate common tasks including calculating ages (<code>age_calc</code>), grade retention (<code>retained_calc</code>), and student mobility (<code>moves_calc</code>).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">age_calc</span>(<span class="dt">dob =</span> <span class="kw">as.Date</span>(<span class="st">'1995-01-15'</span>), <span class="dt">enddate =</span> <span class="kw">as.Date</span>(<span class="st">'2003-02-16'</span>), 
-         <span class="dt">units =</span> <span class="st">&quot;years&quot;</span>)
-<span class="co">#&gt; [1] 8.087671</span>
-<span class="kw">age_calc</span>(<span class="dt">dob =</span> <span class="kw">as.Date</span>(<span class="st">'1995-01-15'</span>), <span class="dt">enddate =</span> <span class="kw">as.Date</span>(<span class="st">'2003-02-16'</span>), 
-         <span class="dt">units =</span> <span class="st">&quot;months&quot;</span>)
-<span class="co">#&gt; [1] 97.03571</span>
-<span class="kw">age_calc</span>(<span class="dt">dob =</span> <span class="kw">as.Date</span>(<span class="st">'1995-01-15'</span>), <span class="dt">enddate =</span> <span class="kw">as.Date</span>(<span class="st">'2003-02-16'</span>), 
-         <span class="dt">units =</span> <span class="st">&quot;days&quot;</span>)
-<span class="co">#&gt; Time difference of 2954 days</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">age_calc</span>(<span class="dt">dob =</span> <span class="kw">as.Date</span>(<span class="st">'1995-01-15'</span>), <span class="dt">enddate =</span> <span class="kw">as.Date</span>(<span class="st">'2003-02-16'</span>), </a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">         <span class="dt">units =</span> <span class="st">&quot;years&quot;</span>)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; [1] 8.087671</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">age_calc</span>(<span class="dt">dob =</span> <span class="kw">as.Date</span>(<span class="st">'1995-01-15'</span>), <span class="dt">enddate =</span> <span class="kw">as.Date</span>(<span class="st">'2003-02-16'</span>), </a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">         <span class="dt">units =</span> <span class="st">&quot;months&quot;</span>)</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; [1] 97.03571</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw">age_calc</span>(<span class="dt">dob =</span> <span class="kw">as.Date</span>(<span class="st">'1995-01-15'</span>), <span class="dt">enddate =</span> <span class="kw">as.Date</span>(<span class="st">'2003-02-16'</span>), </a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">         <span class="dt">units =</span> <span class="st">&quot;days&quot;</span>)</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt; Time difference of 2954 days</span></a></code></pre></div>
 <p><code>age_calc</code> also now properly accounts for leap years and leap seconds by default. <code>age_calc</code> can be passed a vector of dates of birth and a vector of end dates or a single end-date and produce a vector of ages as well – suitable for computing student age on the fly from date-of-birth records.</p>
 <p><code>retained_calc</code> takes a vector of student identifiers and a vector of grades and checks whether or not the student was retained in the grade level specified by the user. It returns a data.frame of all students who could have been retained and a yes or no indicator of whether they were retained.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">sid =</span> <span class="kw">c</span>(<span class="dv">101</span>, <span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">103</span>, <span class="dv">103</span>, <span class="dv">104</span>, <span class="dv">105</span>, <span class="dv">105</span>, <span class="dv">106</span>, <span class="dv">106</span>),
-                 <span class="dt">grade =</span> <span class="kw">c</span>(<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">7</span>))
-<span class="kw">retained_calc</span>(<span class="dt">df =</span> x, <span class="dt">sid =</span> <span class="st">&quot;sid&quot;</span>, <span class="dt">grade =</span> <span class="st">&quot;grade&quot;</span>, <span class="dt">grade_val =</span> <span class="dv">9</span>)
-<span class="co">#&gt;   sid retained</span>
-<span class="co">#&gt; 1 101        N</span>
-<span class="co">#&gt; 2 102        N</span>
-<span class="co">#&gt; 3 103        Y</span>
-<span class="co">#&gt; 4 105        N</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">sid =</span> <span class="kw">c</span>(<span class="dv">101</span>, <span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">103</span>, <span class="dv">103</span>, <span class="dv">104</span>, <span class="dv">105</span>, <span class="dv">105</span>, <span class="dv">106</span>, <span class="dv">106</span>),</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">                 <span class="dt">grade =</span> <span class="kw">c</span>(<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">7</span>))</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw">retained_calc</span>(<span class="dt">df =</span> x, <span class="dt">sid =</span> <span class="st">&quot;sid&quot;</span>, <span class="dt">grade =</span> <span class="st">&quot;grade&quot;</span>, <span class="dt">grade_val =</span> <span class="dv">9</span>)</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt;   sid retained</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; 1 101        N</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; 2 102        N</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; 3 103        Y</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; 4 105        N</span></a></code></pre></div>
 <p><code>retained_calc</code> is intended to be used after you have processed your data as it does not take into account time or sequence other than the order in which the data is passed to it.</p>
 <p><code>moves_calc</code> is intended to identify based on enrollment dates whether a student experienced a school move within a school year.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">sid =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="kw">rep</span>(<span class="dv">2</span>,<span class="dv">4</span>), <span class="dv">3</span>, <span class="kw">rep</span>(<span class="dv">4</span>,<span class="dv">2</span>)),
-                   <span class="dt">schid =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>),
-                   <span class="dt">enroll_date =</span> <span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">'2004-08-26'</span>,
-                   <span class="st">'2004-10-01'</span>, <span class="st">'2005-05-01'</span>, <span class="st">'2004-09-01'</span>,
-                   <span class="st">'2004-11-03'</span>, <span class="st">'2005-01-11'</span>, <span class="st">'2005-04-02'</span>,
-                   <span class="st">'2004-09-26'</span>, <span class="st">'2004-09-01'</span>,<span class="st">'2005-02-02'</span>), <span class="dt">format=</span><span class="st">'%Y-%m-%d'</span>),
-                   <span class="dt">exit_date =</span> <span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">'2004-08-26'</span>, <span class="st">'2005-04-10'</span>,
-                    <span class="st">'2005-06-15'</span>, <span class="st">'2004-11-02'</span>, <span class="st">'2005-01-10'</span>,
-                    <span class="st">'2005-03-01'</span>, <span class="st">'2005-06-15'</span>, <span class="st">'2005-05-30'</span>,
-                    <span class="ot">NA</span>, <span class="st">'2005-06-15'</span>), <span class="dt">format=</span><span class="st">'%Y-%m-%d'</span>))
-
-moves &lt;-<span class="st"> </span><span class="kw">moves_calc</span>(df, <span class="dt">sid =</span> <span class="st">&quot;sid&quot;</span>, <span class="dt">schid =</span> <span class="st">&quot;schid&quot;</span>, <span class="dt">enroll_date =</span> <span class="st">&quot;enroll_date&quot;</span>, 
-                    <span class="dt">exit_date =</span> <span class="st">&quot;exit_date&quot;</span>)
-moves
-<span class="co">#&gt;   sid moves</span>
-<span class="co">#&gt; 1   1     4</span>
-<span class="co">#&gt; 2   2     4</span>
-<span class="co">#&gt; 3   3     2</span>
-<span class="co">#&gt; 4   4    NA</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">sid =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="kw">rep</span>(<span class="dv">2</span>,<span class="dv">4</span>), <span class="dv">3</span>, <span class="kw">rep</span>(<span class="dv">4</span>,<span class="dv">2</span>)),</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">                   <span class="dt">schid =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">                   <span class="dt">enroll_date =</span> <span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">'2004-08-26'</span>,</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">                   <span class="st">'2004-10-01'</span>, <span class="st">'2005-05-01'</span>, <span class="st">'2004-09-01'</span>,</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">                   <span class="st">'2004-11-03'</span>, <span class="st">'2005-01-11'</span>, <span class="st">'2005-04-02'</span>,</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">                   <span class="st">'2004-09-26'</span>, <span class="st">'2004-09-01'</span>,<span class="st">'2005-02-02'</span>), <span class="dt">format=</span><span class="st">'%Y-%m-%d'</span>),</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">                   <span class="dt">exit_date =</span> <span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">'2004-08-26'</span>, <span class="st">'2005-04-10'</span>,</a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">                    <span class="st">'2005-06-15'</span>, <span class="st">'2004-11-02'</span>, <span class="st">'2005-01-10'</span>,</a>
+<a class="sourceLine" id="cb3-9" data-line-number="9">                    <span class="st">'2005-03-01'</span>, <span class="st">'2005-06-15'</span>, <span class="st">'2005-05-30'</span>,</a>
+<a class="sourceLine" id="cb3-10" data-line-number="10">                    <span class="ot">NA</span>, <span class="st">'2005-06-15'</span>), <span class="dt">format=</span><span class="st">'%Y-%m-%d'</span>))</a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12">moves &lt;-<span class="st"> </span><span class="kw">moves_calc</span>(df, <span class="dt">sid =</span> <span class="st">&quot;sid&quot;</span>, <span class="dt">schid =</span> <span class="st">&quot;schid&quot;</span>, <span class="dt">enroll_date =</span> <span class="st">&quot;enroll_date&quot;</span>, </a>
+<a class="sourceLine" id="cb3-13" data-line-number="13">                    <span class="dt">exit_date =</span> <span class="st">&quot;exit_date&quot;</span>)</a>
+<a class="sourceLine" id="cb3-14" data-line-number="14">moves</a>
+<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt;   sid moves</span></a>
+<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt; 1   1     4</span></a>
+<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt; 2   2     4</span></a>
+<a class="sourceLine" id="cb3-18" data-line-number="18"><span class="co">#&gt; 3   3     2</span></a>
+<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="co">#&gt; 4   4    NA</span></a></code></pre></div>
 </div>
 <div id="manipulate-data" class="section level1">
 <h1>Manipulate Data</h1>
 <p>Another set of key functions in the package are to make basic data manipulation easier. One thing users of other statistical packaegs may miss when using R is a convenient function for determining the <code>mode</code> of a vector. The <code>statamode</code> function is designed to do just that. <code>statamode</code> works with numeric, character, and factor data types. It also includes various options for how to deal with a tie demonstrated below.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vecA &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>)
-<span class="kw">statamode</span>(vecA, <span class="dt">method =</span> <span class="st">&quot;stata&quot;</span>)
-<span class="co">#&gt; [1] &quot;.&quot;</span>
-vecB &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span><span class="op">:</span><span class="dv">10</span>)
-<span class="kw">statamode</span>(vecB, <span class="dt">method =</span> <span class="st">&quot;last&quot;</span>)
-<span class="co">#&gt; [1] 1</span>
-vecC &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="dv">5</span><span class="op">:</span><span class="dv">10</span>)
-<span class="kw">statamode</span>(vecC, <span class="dt">method =</span> <span class="st">&quot;last&quot;</span>)
-<span class="co">#&gt; [1] 1</span>
-vecA &lt;-<span class="st"> </span><span class="kw">c</span>(LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]); vecA &lt;-<span class="st"> </span><span class="kw">factor</span>(vecA)
-<span class="kw">statamode</span>(vecA, <span class="dt">method =</span> <span class="st">&quot;last&quot;</span>)
-<span class="co">#&gt; [1] J</span>
-<span class="co">#&gt; Levels: J</span>
-vecB &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, LETTERS[<span class="dv">3</span><span class="op">:</span><span class="dv">10</span>]); vecB &lt;-<span class="st"> </span><span class="kw">factor</span>(vecB)
-<span class="kw">statamode</span>(vecB, <span class="dt">method =</span> <span class="st">&quot;last&quot;</span>)
-<span class="co">#&gt; [1] A</span>
-<span class="co">#&gt; Levels: A</span>
-vecA &lt;-<span class="st"> </span><span class="kw">c</span>(LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>])
-<span class="kw">statamode</span>(vecA, <span class="dt">method =</span> <span class="st">&quot;sample&quot;</span>)
-<span class="co">#&gt; [1] &quot;B&quot;</span>
-vecB &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, LETTERS[<span class="dv">3</span><span class="op">:</span><span class="dv">10</span>])
-<span class="kw">statamode</span>(vecB, <span class="dt">method =</span> <span class="st">&quot;stata&quot;</span>)
-<span class="co">#&gt; [1] &quot;A&quot;</span>
-vecC &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, LETTERS[<span class="dv">5</span><span class="op">:</span><span class="dv">10</span>])
-<span class="kw">statamode</span>(vecC, <span class="dt">method =</span> <span class="st">&quot;stata&quot;</span>)
-<span class="co">#&gt; [1] &quot;A&quot;</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">vecA &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">statamode</span>(vecA, <span class="dt">method =</span> <span class="st">&quot;stata&quot;</span>)</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; [1] &quot;.&quot;</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">vecB &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span><span class="op">:</span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="kw">statamode</span>(vecB, <span class="dt">method =</span> <span class="st">&quot;last&quot;</span>)</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; [1] 1</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">vecC &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="dv">5</span><span class="op">:</span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="kw">statamode</span>(vecC, <span class="dt">method =</span> <span class="st">&quot;last&quot;</span>)</a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; [1] 1</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">vecA &lt;-<span class="st"> </span><span class="kw">c</span>(LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]); vecA &lt;-<span class="st"> </span><span class="kw">factor</span>(vecA)</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="kw">statamode</span>(vecA, <span class="dt">method =</span> <span class="st">&quot;last&quot;</span>)</a>
+<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; [1] J</span></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; Levels: J</span></a>
+<a class="sourceLine" id="cb4-14" data-line-number="14">vecB &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, LETTERS[<span class="dv">3</span><span class="op">:</span><span class="dv">10</span>]); vecB &lt;-<span class="st"> </span><span class="kw">factor</span>(vecB)</a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="kw">statamode</span>(vecB, <span class="dt">method =</span> <span class="st">&quot;last&quot;</span>)</a>
+<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">#&gt; [1] A</span></a>
+<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="co">#&gt; Levels: A</span></a>
+<a class="sourceLine" id="cb4-18" data-line-number="18">vecA &lt;-<span class="st"> </span><span class="kw">c</span>(LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>])</a>
+<a class="sourceLine" id="cb4-19" data-line-number="19"><span class="kw">statamode</span>(vecA, <span class="dt">method =</span> <span class="st">&quot;sample&quot;</span>)</a>
+<a class="sourceLine" id="cb4-20" data-line-number="20"><span class="co">#&gt; [1] &quot;D&quot;</span></a>
+<a class="sourceLine" id="cb4-21" data-line-number="21">vecB &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, LETTERS[<span class="dv">3</span><span class="op">:</span><span class="dv">10</span>])</a>
+<a class="sourceLine" id="cb4-22" data-line-number="22"><span class="kw">statamode</span>(vecB, <span class="dt">method =</span> <span class="st">&quot;stata&quot;</span>)</a>
+<a class="sourceLine" id="cb4-23" data-line-number="23"><span class="co">#&gt; [1] &quot;A&quot;</span></a>
+<a class="sourceLine" id="cb4-24" data-line-number="24">vecC &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, LETTERS[<span class="dv">5</span><span class="op">:</span><span class="dv">10</span>])</a>
+<a class="sourceLine" id="cb4-25" data-line-number="25"><span class="kw">statamode</span>(vecC, <span class="dt">method =</span> <span class="st">&quot;stata&quot;</span>)</a>
+<a class="sourceLine" id="cb4-26" data-line-number="26"><span class="co">#&gt; [1] &quot;A&quot;</span></a></code></pre></div>
 <p>There are a number of functions to save you keystrokes like <code>defac</code> for converting a factor to a character, <code>makenum</code> for turning a factor variable into a numeric variable, <code>max_mis</code> for taking the maximum of a vector of numerics and ignoring any NAs (useful for inclusion in <code>do.call</code> or <code>apply</code> constructions). <code>remove_char</code> allows you to quickly <code>gsub</code> out a specific character from a string vector such as an <code>*</code> or <code>...</code>. <code>decomma</code> is a somewhat specialized version of this for processing data where numerics are written with commas. <code>nth_max</code> allows you to identify the 2nd, 3rd, etc. maximum value in a vector.</p>
 </div>
 <div id="regression-models" class="section level1">
 <h1>Regression Models</h1>
 <p><code>eeptools</code> includes ways to simplify the use of regression analyses tools recommended by Gelman and Hill 2006 through the <code>gelmansim</code> function, which itself is a wrapper for the <code>arm::sim()</code> function. This function allows the distribution of predicted values to be generated automatically which is useful for gauging uncertainty in a statistical model and also to compare predictions from multiple models on the same case data to see if the values of those models overlap or are distinct from one another.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MASS)
-<span class="co">#&gt; Warning: package 'MASS' was built under R version 3.4.3</span>
-<span class="co">#Examples of &quot;sim&quot; </span>
-<span class="kw">set.seed</span> (<span class="dv">1</span>)
-J &lt;-<span class="st"> </span><span class="dv">15</span>
-n &lt;-<span class="st"> </span>J<span class="op">*</span>(J<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span><span class="dv">2</span>
-group &lt;-<span class="st"> </span><span class="kw">rep</span> (<span class="dv">1</span><span class="op">:</span>J, <span class="dv">1</span><span class="op">:</span>J)
-mu.a &lt;-<span class="st"> </span><span class="dv">5</span>
-sigma.a &lt;-<span class="st"> </span><span class="dv">2</span>
-a &lt;-<span class="st"> </span><span class="kw">rnorm</span> (J, mu.a, sigma.a)
-b &lt;-<span class="st"> </span><span class="op">-</span><span class="dv">3</span>
-x &lt;-<span class="st"> </span><span class="kw">rnorm</span> (n, <span class="dv">2</span>, <span class="dv">1</span>)
-sigma.y &lt;-<span class="st"> </span><span class="dv">6</span>
-y &lt;-<span class="st"> </span><span class="kw">rnorm</span> (n, a[group] <span class="op">+</span><span class="st"> </span>b<span class="op">*</span>x, sigma.y)
-u &lt;-<span class="st"> </span><span class="kw">runif</span> (J, <span class="dv">0</span>, <span class="dv">3</span>)
-dat &lt;-<span class="st"> </span><span class="kw">cbind</span> (y, x, group)
-<span class="co"># Linear regression </span>
-dat &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(dat)
-dat<span class="op">$</span>group &lt;-<span class="st"> </span><span class="kw">factor</span>(dat<span class="op">$</span>group)
-M3 &lt;-<span class="st"> </span><span class="kw">glm</span> (y <span class="op">~</span><span class="st"> </span>x <span class="op">+</span><span class="st"> </span>group, <span class="dt">data=</span>dat)
-cases &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">x =</span> <span class="kw">seq</span>(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dt">by=</span><span class="fl">0.1</span>), 
-                     <span class="dt">group=</span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">14</span>, <span class="dt">by=</span><span class="dv">2</span>))
-cases<span class="op">$</span>group &lt;-<span class="st"> </span><span class="kw">factor</span>(cases<span class="op">$</span>group)
-sim.results &lt;-<span class="st"> </span><span class="kw">gelmansim</span>(<span class="dt">mod =</span> M3, <span class="dt">newdata =</span> cases, <span class="dt">n.sims=</span><span class="dv">200</span>, <span class="dt">na.omit=</span><span class="ot">TRUE</span>)
-<span class="kw">head</span>(sim.results)
-<span class="co">#&gt;      x group       yhats   yhatMin  yhatMax</span>
-<span class="co">#&gt; 1 -2.0     1  1.49216152 -5.317070 8.826878</span>
-<span class="co">#&gt; 2 -1.9     1  1.05530376 -6.141328 9.084779</span>
-<span class="co">#&gt; 3 -1.8     1  1.50069226 -5.341525 8.256558</span>
-<span class="co">#&gt; 4 -1.7     1 -0.04991641 -7.027672 6.982415</span>
-<span class="co">#&gt; 5 -1.6     1  0.50262366 -6.315685 7.944253</span>
-<span class="co">#&gt; 6 -1.5     1 -0.32213552 -7.343319 6.737021</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">library</span>(MASS)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">#Examples of &quot;sim&quot; </span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw">set.seed</span> (<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">J &lt;-<span class="st"> </span><span class="dv">15</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">n &lt;-<span class="st"> </span>J<span class="op">*</span>(J<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">group &lt;-<span class="st"> </span><span class="kw">rep</span> (<span class="dv">1</span><span class="op">:</span>J, <span class="dv">1</span><span class="op">:</span>J)</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">mu.a &lt;-<span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">sigma.a &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">a &lt;-<span class="st"> </span><span class="kw">rnorm</span> (J, mu.a, sigma.a)</a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">b &lt;-<span class="st"> </span><span class="dv">-3</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">x &lt;-<span class="st"> </span><span class="kw">rnorm</span> (n, <span class="dv">2</span>, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb5-12" data-line-number="12">sigma.y &lt;-<span class="st"> </span><span class="dv">6</span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13">y &lt;-<span class="st"> </span><span class="kw">rnorm</span> (n, a[group] <span class="op">+</span><span class="st"> </span>b<span class="op">*</span>x, sigma.y)</a>
+<a class="sourceLine" id="cb5-14" data-line-number="14">u &lt;-<span class="st"> </span><span class="kw">runif</span> (J, <span class="dv">0</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb5-15" data-line-number="15">dat &lt;-<span class="st"> </span><span class="kw">cbind</span> (y, x, group)</a>
+<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co"># Linear regression </span></a>
+<a class="sourceLine" id="cb5-17" data-line-number="17">dat &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(dat)</a>
+<a class="sourceLine" id="cb5-18" data-line-number="18">dat<span class="op">$</span>group &lt;-<span class="st"> </span><span class="kw">factor</span>(dat<span class="op">$</span>group)</a>
+<a class="sourceLine" id="cb5-19" data-line-number="19">M3 &lt;-<span class="st"> </span><span class="kw">glm</span> (y <span class="op">~</span><span class="st"> </span>x <span class="op">+</span><span class="st"> </span>group, <span class="dt">data=</span>dat)</a>
+<a class="sourceLine" id="cb5-20" data-line-number="20">cases &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">x =</span> <span class="kw">seq</span>(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dt">by=</span><span class="fl">0.1</span>), </a>
+<a class="sourceLine" id="cb5-21" data-line-number="21">                     <span class="dt">group=</span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">14</span>, <span class="dt">by=</span><span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb5-22" data-line-number="22">cases<span class="op">$</span>group &lt;-<span class="st"> </span><span class="kw">factor</span>(cases<span class="op">$</span>group)</a>
+<a class="sourceLine" id="cb5-23" data-line-number="23">sim.results &lt;-<span class="st"> </span><span class="kw">gelmansim</span>(<span class="dt">mod =</span> M3, <span class="dt">newdata =</span> cases, <span class="dt">n.sims=</span><span class="dv">200</span>, <span class="dt">na.omit=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb5-24" data-line-number="24"><span class="kw">head</span>(sim.results)</a>
+<a class="sourceLine" id="cb5-25" data-line-number="25"><span class="co">#&gt;      x group      yhats   yhatMin  yhatMax</span></a>
+<a class="sourceLine" id="cb5-26" data-line-number="26"><span class="co">#&gt; 1 -2.0     1  1.1736195 -6.264184 8.243267</span></a>
+<a class="sourceLine" id="cb5-27" data-line-number="27"><span class="co">#&gt; 2 -1.9     1  0.7390300 -7.376271 8.587548</span></a>
+<a class="sourceLine" id="cb5-28" data-line-number="28"><span class="co">#&gt; 3 -1.8     1  1.1866869 -6.256829 7.846494</span></a>
+<a class="sourceLine" id="cb5-29" data-line-number="29"><span class="co">#&gt; 4 -1.7     1 -0.3616534 -8.355161 7.494966</span></a>
+<a class="sourceLine" id="cb5-30" data-line-number="30"><span class="co">#&gt; 5 -1.6     1  0.1931550 -7.104866 8.648023</span></a>
+<a class="sourceLine" id="cb5-31" data-line-number="31"><span class="co">#&gt; 6 -1.5     1 -0.6293359 -7.803899 6.654324</span></a></code></pre></div>
 </div>
 <div id="plotting-functions" class="section level1">
 <h1>Plotting Functions</h1>
 <p>There is also a <code>ggplot2</code> version of <code>plot.lm</code> included:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(mpg)
-mymod &lt;-<span class="st"> </span><span class="kw">lm</span>(cty<span class="op">~</span>displ <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>drv, <span class="dt">data=</span>mpg)
-<span class="kw">autoplot</span>(mymod)</code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">data</span>(mpg)</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">mymod &lt;-<span class="st"> </span><span class="kw">lm</span>(cty<span class="op">~</span>displ <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>drv, <span class="dt">data=</span>mpg)</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw">autoplot</span>(mymod)</a></code></pre></div>
 <p><img src="data:image/png;base64,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" /><!-- --></p>
 <p>Finally, there is a convenient method for creating labeled mosaic plots.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sampDat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">cbind</span>(<span class="dt">x=</span><span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dt">by=</span><span class="dv">1</span>), <span class="dt">y=</span><span class="kw">sample</span>(LETTERS[<span class="dv">6</span><span class="op">:</span><span class="dv">8</span>], <span class="dv">60</span>, 
-                                                        <span class="dt">replace=</span><span class="ot">TRUE</span>)),
-                        <span class="dt">fac=</span><span class="kw">sample</span>(LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dv">60</span>, <span class="dt">replace=</span><span class="ot">TRUE</span>))
-varnames&lt;-<span class="kw">c</span>(<span class="st">'Quality'</span>,<span class="st">'Grade'</span>)
-<span class="kw">crosstabplot</span>(sampDat, <span class="st">&quot;y&quot;</span>, <span class="st">&quot;fac&quot;</span>, <span class="dt">varnames =</span> varnames,  <span class="dt">label =</span> <span class="ot">TRUE</span>, 
-             <span class="dt">title =</span> <span class="st">&quot;Crosstab Plot&quot;</span>, <span class="dt">shade =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">sampDat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">cbind</span>(<span class="dt">x=</span><span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dt">by=</span><span class="dv">1</span>), <span class="dt">y=</span><span class="kw">sample</span>(LETTERS[<span class="dv">6</span><span class="op">:</span><span class="dv">8</span>], <span class="dv">60</span>, </a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">                                                        <span class="dt">replace=</span><span class="ot">TRUE</span>)),</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">                        <span class="dt">fac=</span><span class="kw">sample</span>(LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dv">60</span>, <span class="dt">replace=</span><span class="ot">TRUE</span>))</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">varnames&lt;-<span class="kw">c</span>(<span class="st">'Quality'</span>,<span class="st">'Grade'</span>)</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="kw">crosstabplot</span>(sampDat, <span class="st">&quot;y&quot;</span>, <span class="st">&quot;fac&quot;</span>, <span class="dt">varnames =</span> varnames,  <span class="dt">label =</span> <span class="ot">TRUE</span>, </a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">             <span class="dt">title =</span> <span class="st">&quot;Crosstab Plot&quot;</span>, <span class="dt">shade =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <p><img src="data:image/png;base64,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" /><!-- --></p>
 <p>And without labels:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">crosstabplot</span>(sampDat, <span class="st">&quot;y&quot;</span>, <span class="st">&quot;fac&quot;</span>, <span class="dt">varnames =</span> varnames,  <span class="dt">label =</span> <span class="ot">FALSE</span>, 
-             <span class="dt">title =</span> <span class="st">&quot;Crosstab Plot&quot;</span>, <span class="dt">shade =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">crosstabplot</span>(sampDat, <span class="st">&quot;y&quot;</span>, <span class="st">&quot;fac&quot;</span>, <span class="dt">varnames =</span> varnames,  <span class="dt">label =</span> <span class="ot">FALSE</span>, </a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">             <span class="dt">title =</span> <span class="st">&quot;Crosstab Plot&quot;</span>, <span class="dt">shade =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <p><img src="data:image/png;base64,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" /><!-- --></p>
 </div>
 <div id="datasets" class="section level1">
 <h1>Datasets</h1>
 <p><code>eeptools</code> provides three new datasets of interest to education researchers. These datasets are also used in the <a href="www.jaredknowles.com/r-bootcamp">R Bootcamp for Education Analysts</a></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(eeptools)
-<span class="kw">data</span>(<span class="st">&quot;stuatt&quot;</span>)
-<span class="kw">head</span>(stuatt)
-<span class="co">#&gt;   sid school_year male race_ethnicity birth_date</span>
-<span class="co">#&gt; 1   1        2004    1              B      10869</span>
-<span class="co">#&gt; 2   1        2005    1              H      10869</span>
-<span class="co">#&gt; 3   1        2006    1              H      10869</span>
-<span class="co">#&gt; 4   1        2007    1              H      10869</span>
-<span class="co">#&gt; 5   2        2006    0              W      11948</span>
-<span class="co">#&gt; 6   2        2007    0              B      11948</span>
-<span class="co">#&gt;   first_9th_school_year_reported hs_diploma      hs_diploma_type</span>
-<span class="co">#&gt; 1                           2004          0                     </span>
-<span class="co">#&gt; 2                           2004          0                     </span>
-<span class="co">#&gt; 3                           2004          0                     </span>
-<span class="co">#&gt; 4                           2004          0                     </span>
-<span class="co">#&gt; 5                             NA          1     Standard Diploma</span>
-<span class="co">#&gt; 6                             NA          1 College Prep Diploma</span>
-<span class="co">#&gt;   hs_diploma_date</span>
-<span class="co">#&gt; 1                </span>
-<span class="co">#&gt; 2                </span>
-<span class="co">#&gt; 3                </span>
-<span class="co">#&gt; 4                </span>
-<span class="co">#&gt; 5        6/5/2008</span>
-<span class="co">#&gt; 6       5/24/2009</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">library</span>(eeptools)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">data</span>(<span class="st">&quot;stuatt&quot;</span>)</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="kw">head</span>(stuatt)</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt;   sid school_year male race_ethnicity birth_date</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co">#&gt; 1   1        2004    1              B      10869</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; 2   1        2005    1              H      10869</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; 3   1        2006    1              H      10869</span></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co">#&gt; 4   1        2007    1              H      10869</span></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="co">#&gt; 5   2        2006    0              W      11948</span></a>
+<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="co">#&gt; 6   2        2007    0              B      11948</span></a>
+<a class="sourceLine" id="cb9-11" data-line-number="11"><span class="co">#&gt;   first_9th_school_year_reported hs_diploma      hs_diploma_type</span></a>
+<a class="sourceLine" id="cb9-12" data-line-number="12"><span class="co">#&gt; 1                           2004          0                     </span></a>
+<a class="sourceLine" id="cb9-13" data-line-number="13"><span class="co">#&gt; 2                           2004          0                     </span></a>
+<a class="sourceLine" id="cb9-14" data-line-number="14"><span class="co">#&gt; 3                           2004          0                     </span></a>
+<a class="sourceLine" id="cb9-15" data-line-number="15"><span class="co">#&gt; 4                           2004          0                     </span></a>
+<a class="sourceLine" id="cb9-16" data-line-number="16"><span class="co">#&gt; 5                             NA          1     Standard Diploma</span></a>
+<a class="sourceLine" id="cb9-17" data-line-number="17"><span class="co">#&gt; 6                             NA          1 College Prep Diploma</span></a>
+<a class="sourceLine" id="cb9-18" data-line-number="18"><span class="co">#&gt;   hs_diploma_date</span></a>
+<a class="sourceLine" id="cb9-19" data-line-number="19"><span class="co">#&gt; 1                </span></a>
+<a class="sourceLine" id="cb9-20" data-line-number="20"><span class="co">#&gt; 2                </span></a>
+<a class="sourceLine" id="cb9-21" data-line-number="21"><span class="co">#&gt; 3                </span></a>
+<a class="sourceLine" id="cb9-22" data-line-number="22"><span class="co">#&gt; 4                </span></a>
+<a class="sourceLine" id="cb9-23" data-line-number="23"><span class="co">#&gt; 5        6/5/2008</span></a>
+<a class="sourceLine" id="cb9-24" data-line-number="24"><span class="co">#&gt; 6       5/24/2009</span></a></code></pre></div>
 <p>The <code>stuatt</code>, student attributes, dataset is provided from the <a href="http://sdp.cepr.harvard.edu/toolkit-effective-data-use">Strategic Data Project Toolkit for Effective Data Use</a>. This dataset is useful for learning how to clean data in R and how to aggregate and summarize individual unit-record data into group-level data.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(stulevel)
-<span class="kw">head</span>(stulevel)
-<span class="co">#&gt;     X school  stuid grade schid dist white black hisp indian asian econ</span>
-<span class="co">#&gt; 1  44      1 149995     3   495  105     0     1    0      0     0    0</span>
-<span class="co">#&gt; 2  53      1  13495     3   495   45     0     1    0      0     0    1</span>
-<span class="co">#&gt; 3 116      1 106495     3   495   45     0     1    0      0     0    1</span>
-<span class="co">#&gt; 4 244      1  45205     3   205   15     0     1    0      0     0    1</span>
-<span class="co">#&gt; 5 274      1 142705     3   205   75     0     1    0      0     0    1</span>
-<span class="co">#&gt; 6 276      1  14995     3   495  105     0     1    0      0     0    1</span>
-<span class="co">#&gt;   female ell disab sch_fay dist_fay luck   ability    measerr      teachq</span>
-<span class="co">#&gt; 1      0   0     0       0        0    0  87.85405  11.133264 39.09024712</span>
-<span class="co">#&gt; 2      0   0     0       0        0    1  97.78756   6.822394  0.09848192</span>
-<span class="co">#&gt; 3      0   0     0       0        0    0 104.49303  -7.856159 39.53885270</span>
-<span class="co">#&gt; 4      0   0     0       0        0    1 111.67151 -17.574152 24.11612277</span>
-<span class="co">#&gt; 5      0   0     0       0        0    0  81.92539  52.983338 56.68061304</span>
-<span class="co">#&gt; 6      0   0     0       0        0    0 101.92904  22.604145 71.62196655</span>
-<span class="co">#&gt;   year attday schoolscore district schoolhigh schoolavg schoollow   readSS</span>
-<span class="co">#&gt; 1 2000    180    29.22427        3          0         1         0 357.2865</span>
-<span class="co">#&gt; 2 2000    180    55.96326        3          0         1         0 263.9046</span>
-<span class="co">#&gt; 3 2000    160    55.96326        3          0         1         0 369.6722</span>
-<span class="co">#&gt; 4 2000    168    55.96326        3          0         1         0 346.5957</span>
-<span class="co">#&gt; 5 2000    156    55.96326        3          0         1         0 373.1254</span>
-<span class="co">#&gt; 6 2000    157    55.96326        3          0         1         0 436.7607</span>
-<span class="co">#&gt;     mathSS     proflvl race</span>
-<span class="co">#&gt; 1 387.2803       basic    B</span>
-<span class="co">#&gt; 2 302.5724 below basic    B</span>
-<span class="co">#&gt; 3 365.4614       basic    B</span>
-<span class="co">#&gt; 4 344.4964       basic    B</span>
-<span class="co">#&gt; 5 441.1581       basic    B</span>
-<span class="co">#&gt; 6 463.4033  proficient    B</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">data</span>(stulevel)</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">head</span>(stulevel)</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">#&gt;     X school  stuid grade schid dist white black hisp indian asian econ</span></a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co">#&gt; 1  44      1 149995     3   495  105     0     1    0      0     0    0</span></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co">#&gt; 2  53      1  13495     3   495   45     0     1    0      0     0    1</span></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="co">#&gt; 3 116      1 106495     3   495   45     0     1    0      0     0    1</span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co">#&gt; 4 244      1  45205     3   205   15     0     1    0      0     0    1</span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="co">#&gt; 5 274      1 142705     3   205   75     0     1    0      0     0    1</span></a>
+<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="co">#&gt; 6 276      1  14995     3   495  105     0     1    0      0     0    1</span></a>
+<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="co">#&gt;   female ell disab sch_fay dist_fay luck   ability    measerr      teachq</span></a>
+<a class="sourceLine" id="cb10-11" data-line-number="11"><span class="co">#&gt; 1      0   0     0       0        0    0  87.85405  11.133264 39.09024712</span></a>
+<a class="sourceLine" id="cb10-12" data-line-number="12"><span class="co">#&gt; 2      0   0     0       0        0    1  97.78756   6.822394  0.09848192</span></a>
+<a class="sourceLine" id="cb10-13" data-line-number="13"><span class="co">#&gt; 3      0   0     0       0        0    0 104.49303  -7.856159 39.53885270</span></a>
+<a class="sourceLine" id="cb10-14" data-line-number="14"><span class="co">#&gt; 4      0   0     0       0        0    1 111.67151 -17.574152 24.11612277</span></a>
+<a class="sourceLine" id="cb10-15" data-line-number="15"><span class="co">#&gt; 5      0   0     0       0        0    0  81.92539  52.983338 56.68061304</span></a>
+<a class="sourceLine" id="cb10-16" data-line-number="16"><span class="co">#&gt; 6      0   0     0       0        0    0 101.92904  22.604145 71.62196655</span></a>
+<a class="sourceLine" id="cb10-17" data-line-number="17"><span class="co">#&gt;   year attday schoolscore district schoolhigh schoolavg schoollow   readSS</span></a>
+<a class="sourceLine" id="cb10-18" data-line-number="18"><span class="co">#&gt; 1 2000    180    29.22427        3          0         1         0 357.2865</span></a>
+<a class="sourceLine" id="cb10-19" data-line-number="19"><span class="co">#&gt; 2 2000    180    55.96326        3          0         1         0 263.9046</span></a>
+<a class="sourceLine" id="cb10-20" data-line-number="20"><span class="co">#&gt; 3 2000    160    55.96326        3          0         1         0 369.6722</span></a>
+<a class="sourceLine" id="cb10-21" data-line-number="21"><span class="co">#&gt; 4 2000    168    55.96326        3          0         1         0 346.5957</span></a>
+<a class="sourceLine" id="cb10-22" data-line-number="22"><span class="co">#&gt; 5 2000    156    55.96326        3          0         1         0 373.1254</span></a>
+<a class="sourceLine" id="cb10-23" data-line-number="23"><span class="co">#&gt; 6 2000    157    55.96326        3          0         1         0 436.7607</span></a>
+<a class="sourceLine" id="cb10-24" data-line-number="24"><span class="co">#&gt;     mathSS     proflvl race</span></a>
+<a class="sourceLine" id="cb10-25" data-line-number="25"><span class="co">#&gt; 1 387.2803       basic    B</span></a>
+<a class="sourceLine" id="cb10-26" data-line-number="26"><span class="co">#&gt; 2 302.5724 below basic    B</span></a>
+<a class="sourceLine" id="cb10-27" data-line-number="27"><span class="co">#&gt; 3 365.4614       basic    B</span></a>
+<a class="sourceLine" id="cb10-28" data-line-number="28"><span class="co">#&gt; 4 344.4964       basic    B</span></a>
+<a class="sourceLine" id="cb10-29" data-line-number="29"><span class="co">#&gt; 5 441.1581       basic    B</span></a>
+<a class="sourceLine" id="cb10-30" data-line-number="30"><span class="co">#&gt; 6 463.4033  proficient    B</span></a></code></pre></div>
 <p>The <code>stulevel</code> dataset is a simulated student-level longitudinal record. It contains student and school level attributes and is useful for practicing evaluating longitudinal analyses of student unit-record data.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;midsch&quot;</span>)
-<span class="kw">head</span>(midsch)
-<span class="co">#&gt;   district_id school_id subject grade n1   ss1 n2   ss2 predicted</span>
-<span class="co">#&gt; 1          14       130    math     4 44 433.1 40 463.0  468.7446</span>
-<span class="co">#&gt; 2          70        20    math     4 18 443.0 20 477.2  476.4765</span>
-<span class="co">#&gt; 3         112        80    math     4 86 445.4 94 472.6  478.3509</span>
-<span class="co">#&gt; 4         119        50    math     4 95 427.1 94 460.7  464.0586</span>
-<span class="co">#&gt; 5         147        60    math     4 27 424.2 27 458.7  461.7937</span>
-<span class="co">#&gt; 6         147       125    math     4 17 423.5 26 463.1  461.2470</span>
-<span class="co">#&gt;    residuals     resid_z     resid_t       cooks test_year     tprob</span>
-<span class="co">#&gt; 1 -5.7445937 -0.59189645 -0.59170988 0.000171271      2007 0.2787298</span>
-<span class="co">#&gt; 2  0.7235053  0.07455731  0.07452135 0.000003510      2007 0.4706873</span>
-<span class="co">#&gt; 3 -5.7508949 -0.59266905 -0.59248250 0.000244921      2007 0.2774827</span>
-<span class="co">#&gt; 4 -3.3585931 -0.34605798 -0.34591020 0.000059900      2007 0.3650957</span>
-<span class="co">#&gt; 5 -3.0936928 -0.31877383 -0.31863490 0.000054100      2007 0.3762745</span>
-<span class="co">#&gt; 6  1.8530072  0.19093568  0.19084643 0.000019800      2007 0.4250936</span>
-<span class="co">#&gt;   flagged_t95</span>
-<span class="co">#&gt; 1           0</span>
-<span class="co">#&gt; 2           0</span>
-<span class="co">#&gt; 3           0</span>
-<span class="co">#&gt; 4           0</span>
-<span class="co">#&gt; 5           0</span>
-<span class="co">#&gt; 6           0</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">data</span>(<span class="st">&quot;midsch&quot;</span>)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">head</span>(midsch)</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt;   district_id school_id subject grade n1   ss1 n2   ss2 predicted</span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt; 1          14       130    math     4 44 433.1 40 463.0  468.7446</span></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt; 2          70        20    math     4 18 443.0 20 477.2  476.4765</span></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt; 3         112        80    math     4 86 445.4 94 472.6  478.3509</span></a>
+<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="co">#&gt; 4         119        50    math     4 95 427.1 94 460.7  464.0586</span></a>
+<a class="sourceLine" id="cb11-8" data-line-number="8"><span class="co">#&gt; 5         147        60    math     4 27 424.2 27 458.7  461.7937</span></a>
+<a class="sourceLine" id="cb11-9" data-line-number="9"><span class="co">#&gt; 6         147       125    math     4 17 423.5 26 463.1  461.2470</span></a>
+<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="co">#&gt;    residuals     resid_z     resid_t       cooks test_year     tprob</span></a>
+<a class="sourceLine" id="cb11-11" data-line-number="11"><span class="co">#&gt; 1 -5.7445937 -0.59189645 -0.59170988 0.000171271      2007 0.2787298</span></a>
+<a class="sourceLine" id="cb11-12" data-line-number="12"><span class="co">#&gt; 2  0.7235053  0.07455731  0.07452135 0.000003510      2007 0.4706873</span></a>
+<a class="sourceLine" id="cb11-13" data-line-number="13"><span class="co">#&gt; 3 -5.7508949 -0.59266905 -0.59248250 0.000244921      2007 0.2774827</span></a>
+<a class="sourceLine" id="cb11-14" data-line-number="14"><span class="co">#&gt; 4 -3.3585931 -0.34605798 -0.34591020 0.000059900      2007 0.3650957</span></a>
+<a class="sourceLine" id="cb11-15" data-line-number="15"><span class="co">#&gt; 5 -3.0936928 -0.31877383 -0.31863490 0.000054100      2007 0.3762745</span></a>
+<a class="sourceLine" id="cb11-16" data-line-number="16"><span class="co">#&gt; 6  1.8530072  0.19093568  0.19084643 0.000019800      2007 0.4250936</span></a>
+<a class="sourceLine" id="cb11-17" data-line-number="17"><span class="co">#&gt;   flagged_t95</span></a>
+<a class="sourceLine" id="cb11-18" data-line-number="18"><span class="co">#&gt; 1           0</span></a>
+<a class="sourceLine" id="cb11-19" data-line-number="19"><span class="co">#&gt; 2           0</span></a>
+<a class="sourceLine" id="cb11-20" data-line-number="20"><span class="co">#&gt; 3           0</span></a>
+<a class="sourceLine" id="cb11-21" data-line-number="21"><span class="co">#&gt; 4           0</span></a>
+<a class="sourceLine" id="cb11-22" data-line-number="22"><span class="co">#&gt; 5           0</span></a>
+<a class="sourceLine" id="cb11-23" data-line-number="23"><span class="co">#&gt; 6           0</span></a></code></pre></div>
 <p>The <code>midsch</code> dataset contains an analysis on abnormality in school average assessment scores. It contains observed and predicted values of aggregated test scores at the school level for a large midwestern state.</p>
 </div>
 

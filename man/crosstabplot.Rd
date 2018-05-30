@@ -2,7 +2,7 @@
 % Please edit documentation in R/proficiency_tools.R
 \name{crosstabplot}
 \alias{crosstabplot}
-\title{Draw a visual crosstab (mosaid plot) with shading for correlations 
+\title{Draw a visual crosstab (mosaic plot) with shading for correlations 
 and labels in each cell.}
 \source{
 http://www.rexdouglass.com/blog:3
@@ -18,7 +18,7 @@ variables to compose the crosstab}
 \item{rowvar}{a character value for the column in data that will be displayed on the rows
 of the crosstab}
 
-\item{colvar}{a character vlue for the column in data that will be displayed in columns of the 
+\item{colvar}{a character value for the column in data that will be displayed in columns of the 
 crosstab}
 
 \item{varnames}{a character vector of length two with the labels for rowvar and colvar
