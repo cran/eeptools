@@ -1,8 +1,7 @@
 Package: eeptools
 Type: Package
 Title: Convenience Functions for Education Data
-Version: 1.2.0
-Date: 2018-05-30
+Version: 1.2.1
 Authors@R: c(person(c("Jason", "P."), "Becker", role = c("ctb"),
     email = "jason+sitemail@jbecker.co"),
     person(c("Jared", "E."), "Knowles", role=c("aut", "cre"),
@@ -19,10 +18,12 @@ Suggests: testthat, stringr, knitr, rmarkdown, MASS
 LazyData: true
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
+URL: https://github.com/jknowles/eeptools
+BugReports: https://github.com/jknowles/eeptools/issues
 NeedsCompilation: no
-Packaged: 2018-05-30 20:58:04 UTC; Jared
+Packaged: 2018-10-21 14:52:01 UTC; Jared
 Author: Jason P. Becker [ctb],
   Jared E. Knowles [aut, cre]
 Maintainer: Jared E. Knowles <jknowles@gmail.com>
 Repository: CRAN
-Date/Publication: 2018-05-30 21:13:59 UTC
+Date/Publication: 2018-10-21 16:20:02 UTC
