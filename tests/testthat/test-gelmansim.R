@@ -30,20 +30,20 @@ test_that("returned dataframe is correct size", {
 })
 
 test_that("values of simulations are sensible", {  
-  expect_that(all(sim.results$yhatMin < sim.results$yhats), is_true())
-  expect_that(all(sim.results$yhatMax > sim.results$yhats), is_true())
-  expect_that(all(!is.na(sim.results$yhats)), is_true())
-  expect_that(all(!is.na(sim.results$yhatMin)), is_true())
-  expect_that(all(!is.na(sim.results$yhatMax)), is_true())
+  expect_true(all(sim.results$yhatMin < sim.results$yhats))
+  expect_true(all(sim.results$yhatMax > sim.results$yhats))
+  expect_true(all(!is.na(sim.results$yhats)))
+  expect_true(all(!is.na(sim.results$yhatMin)))
+  expect_true(all(!is.na(sim.results$yhatMax)))
 })
 
 context("Check multivariate GLM case")
 
-dat <- as.data.frame(y123.dat)
-M2 <- glm (y1 ~ x1 + group, data=dat)
+dat <- as.data.frame(y123.dat, stringsAsFactors = TRUE)
+M2 <- glm(y1 ~ x1 + group, data = dat)
 
-cases <- expand.grid(x1 = seq(-2, 2, by=0.1), 
-                    group=seq(1, 14, by=2))
+cases <- expand.grid(x1 = seq(-2, 2, by = 0.1), 
+                    group = seq(1, 14, by = 2))
 
 sim.results <- gelmansim(M2, newdata=cases, n.sims=200, na.omit=TRUE)
 
@@ -54,11 +54,11 @@ test_that("returned dataframe is correct size", {
 })
 
 test_that("values of simulations are sensible", {  
-  expect_that(all(sim.results$yhatMin < sim.results$yhats), is_true())
-  expect_that(all(sim.results$yhatMax > sim.results$yhats), is_true())
-  expect_that(all(!is.na(sim.results$yhats)), is_true())
-  expect_that(all(!is.na(sim.results$yhatMin)), is_true())
-  expect_that(all(!is.na(sim.results$yhatMax)), is_true())
+  expect_true(all(sim.results$yhatMin < sim.results$yhats))
+  expect_true(all(sim.results$yhatMax > sim.results$yhats))
+  expect_true(all(!is.na(sim.results$yhats)))
+  expect_true(all(!is.na(sim.results$yhatMin)))
+  expect_true(all(!is.na(sim.results$yhatMax)))
 })
 
 context("Check multivariate GLM case with factor")
@@ -79,11 +79,11 @@ test_that("returned dataframe is correct size", {
 })
 
 test_that("values of simulations are sensible", {  
-  expect_that(all(sim.results$yhatMin < sim.results$yhats), is_true())
-  expect_that(all(sim.results$yhatMax > sim.results$yhats), is_true())
-  expect_that(all(!is.na(sim.results$yhats)), is_true())
-  expect_that(all(!is.na(sim.results$yhatMin)), is_true())
-  expect_that(all(!is.na(sim.results$yhatMax)), is_true())
+  expect_true(all(sim.results$yhatMin < sim.results$yhats))
+  expect_true(all(sim.results$yhatMax > sim.results$yhats))
+  expect_true(all(!is.na(sim.results$yhats)))
+  expect_true(all(!is.na(sim.results$yhatMin)))
+  expect_true(all(!is.na(sim.results$yhatMax)))
 })
 
 context("Check multivariate LM case with factor")
@@ -105,9 +105,9 @@ test_that("returned dataframe is correct size", {
 })
 
 test_that("values of simulations are sensible", {  
-  expect_that(all(sim.results$yhatMin < sim.results$yhats), is_true())
-  expect_that(all(sim.results$yhatMax > sim.results$yhats), is_true())
-  expect_that(all(!is.na(sim.results$yhats)), is_true())
-  expect_that(all(!is.na(sim.results$yhatMin)), is_true())
-  expect_that(all(!is.na(sim.results$yhatMax)), is_true())
+  expect_true(all(sim.results$yhatMin < sim.results$yhats))
+  expect_true(all(sim.results$yhatMax > sim.results$yhats))
+  expect_true(all(!is.na(sim.results$yhats)))
+  expect_true(all(!is.na(sim.results$yhatMin)))
+  expect_true(all(!is.na(sim.results$yhatMax)))
 })

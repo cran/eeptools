@@ -1,4 +1,4 @@
-## ----setup, echo = FALSE, message=FALSE, warning=FALSE, results='hide'----
+## ----setup, echo = FALSE, message=FALSE, warning=FALSE, results='hide'--------
 knitr::opts_chunk$set(
   cache=FALSE,
   comment="#>",
@@ -7,7 +7,7 @@ knitr::opts_chunk$set(
 )
 library(knitr); library(eeptools)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 age_calc(dob = as.Date('1995-01-15'), enddate = as.Date('2003-02-16'), 
          units = "years")
 age_calc(dob = as.Date('1995-01-15'), enddate = as.Date('2003-02-16'), 
@@ -15,12 +15,12 @@ age_calc(dob = as.Date('1995-01-15'), enddate = as.Date('2003-02-16'),
 age_calc(dob = as.Date('1995-01-15'), enddate = as.Date('2003-02-16'), 
          units = "days")
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 x <- data.frame(sid = c(101, 101, 102, 103, 103, 103, 104, 105, 105, 106, 106),
                  grade = c(9, 10, 9, 9, 9, 10, 10, 8, 9, 7, 7))
 retained_calc(df = x, sid = "sid", grade = "grade", grade_val = 9)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 df <- data.frame(sid = c(rep(1,3), rep(2,4), 3, rep(4,2)),
                    schid = c(1, 2, 2, 2, 3, 1, 1, 1, 3, 1),
                    enroll_date = as.Date(c('2004-08-26',
@@ -37,7 +37,7 @@ moves <- moves_calc(df, sid = "sid", schid = "schid", enroll_date = "enroll_date
 moves
 
 
-## ----statamode-----------------------------------------------------------
+## ----statamode----------------------------------------------------------------
 vecA <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 statamode(vecA, method = "stata")
 vecB <- c(1, 1, 1, 3:10)
@@ -55,7 +55,7 @@ statamode(vecB, method = "stata")
 vecC <- c("A", "A", "A", NA, NA, LETTERS[5:10])
 statamode(vecC, method = "stata")
 
-## ----sim-----------------------------------------------------------------
+## ----sim----------------------------------------------------------------------
 library(MASS)
 #Examples of "sim" 
 set.seed (1)
@@ -81,12 +81,12 @@ cases$group <- factor(cases$group)
 sim.results <- gelmansim(mod = M3, newdata = cases, n.sims=200, na.omit=TRUE)
 head(sim.results)
 
-## ----lmautoplot----------------------------------------------------------
+## ----lmautoplot---------------------------------------------------------------
 data(mpg)
 mymod <- lm(cty~displ + cyl + drv, data=mpg)
 autoplot(mymod)
 
-## ----crossplot-----------------------------------------------------------
+## ----crossplot----------------------------------------------------------------
 sampDat <- data.frame(cbind(x=seq(1,3,by=1), y=sample(LETTERS[6:8], 60, 
                                                         replace=TRUE)),
                         fac=sample(LETTERS[1:4], 60, replace=TRUE))
@@ -94,21 +94,21 @@ varnames<-c('Quality','Grade')
 crosstabplot(sampDat, "y", "fac", varnames = varnames,  label = TRUE, 
              title = "Crosstab Plot", shade = FALSE)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 crosstabplot(sampDat, "y", "fac", varnames = varnames,  label = FALSE, 
              title = "Crosstab Plot", shade = TRUE)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 library(eeptools)
 data("stuatt")
 head(stuatt)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 data(stulevel)
 head(stulevel)
 
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 data("midsch")
 head(midsch)
 
