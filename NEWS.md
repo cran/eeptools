@@ -1,5 +1,10 @@
 # NEWS
 
+## eeptools 1.2.5
+
+- Removed deprecated mapping functions to address #45 the sunsetting of `maptools` 
+- Cleaned up old and redirected URLs
+
 ## eeptools 1.2.3
 
 ### Bug Fixes

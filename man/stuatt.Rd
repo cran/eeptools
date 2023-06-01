@@ -4,7 +4,8 @@
 \name{stuatt}
 \alias{stuatt}
 \title{Student Attributes from the Strategic Data Project Toolkit}
-\format{A data frame with 87534 observations on the following 9 variables.
+\format{
+A data frame with 87534 observations on the following 9 variables.
 \describe{
   \item{\code{sid}}{a numeric vector of the unique student ID}
   \item{\code{school_year}}{a numeric vector of the school year}
@@ -15,10 +16,11 @@
   \item{\code{hs_diploma}}{a numeric vector}
   \item{\code{hs_diploma_type}}{a factor with levels \code{} \code{Alternative Diploma} \code{College Prep Diploma} \code{Standard Diploma}}
   \item{\code{hs_diploma_date}}{a factor with levels \code{} \code{12/2/2008} \code{12/21/2008} \code{4/14/2008} \code{4/18/2008} ...}
-  }}
+  }
+}
 \source{
 Available from the Strategic Data Project online at 
-\url{http://sdp.cepr.harvard.edu/toolkit-effective-data-use}
+\url{https://sdp.cepr.harvard.edu/toolkit-effective-data-use}
 }
 \usage{
 stuatt
@@ -37,6 +39,6 @@ data(stuatt)
 head(stuatt)
 }
 \references{
-Visit the Strategic Data Project online at:  \url{http://sdp.cepr.harvard.edu/}
+Visit the Strategic Data Project online at:  \url{https://sdp.cepr.harvard.edu/}
 }
 \keyword{datasets}
