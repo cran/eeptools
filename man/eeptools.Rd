@@ -2,20 +2,14 @@
 % Please edit documentation in R/eeptools-package.r
 \docType{package}
 \name{eeptools}
+\alias{eeptools-package}
 \alias{eeptools}
 \title{Evaluation of educational policy tools}
 \description{
 Make common tasks for educational evaluation easier to do!
 }
 \details{
-\tabular{ll}{
-Package: \tab eeptools\cr
-Type: \tab Package\cr
-Version: \tab 1.2.0 \cr
-Date: \tab 2018-06-01\cr
-License: \tab GPL-3 \cr
-}
-his package has a number of useful shortcuts for common tasks. It includes 
+This package has a number of useful shortcuts for common tasks. It includes 
 some themes for ggplot2 plots, processing arbitrary text files of data, 
 calculating student characteristics, and finding thresholds within vectors. 
 Future development work will include methods for tuning and evaluating early 
@@ -36,6 +30,15 @@ makenum(gender)
 gender <- factor(gender)
 defac(gender)
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/jknowles/eeptools}
+  \item Report bugs at \url{https://github.com/jknowles/eeptools/issues}
+}
+
+}
 \author{
 Jared E. Knowles
 }
+\keyword{internal}
