@@ -2,17 +2,17 @@
 knitr::opts_chunk$set(
   cache=FALSE,
   comment="#>",
-  collapse=TRUE, 
+  collapse=TRUE,
   echo=TRUE
 )
 library(knitr); library(eeptools)
 
 ## -----------------------------------------------------------------------------
-age_calc(dob = as.Date('1995-01-15'), enddate = as.Date('2003-02-16'), 
+age_calc(dob = as.Date('1995-01-15'), enddate = as.Date('2003-02-16'),
          units = "years")
-age_calc(dob = as.Date('1995-01-15'), enddate = as.Date('2003-02-16'), 
+age_calc(dob = as.Date('1995-01-15'), enddate = as.Date('2003-02-16'),
          units = "months")
-age_calc(dob = as.Date('1995-01-15'), enddate = as.Date('2003-02-16'), 
+age_calc(dob = as.Date('1995-01-15'), enddate = as.Date('2003-02-16'),
          units = "days")
 
 ## -----------------------------------------------------------------------------
@@ -32,7 +32,7 @@ df <- data.frame(sid = c(rep(1,3), rep(2,4), 3, rep(4,2)),
                     '2005-03-01', '2005-06-15', '2005-05-30',
                     NA, '2005-06-15'), format='%Y-%m-%d'))
 
-moves <- moves_calc(df, sid = "sid", schid = "schid", enroll_date = "enroll_date", 
+moves <- moves_calc(df, sid = "sid", schid = "schid", enroll_date = "enroll_date",
                     exit_date = "exit_date")
 moves
 
@@ -55,51 +55,30 @@ statamode(vecB, method = "stata")
 vecC <- c("A", "A", "A", NA, NA, LETTERS[5:10])
 statamode(vecC, method = "stata")
 
-## ----sim----------------------------------------------------------------------
-library(MASS)
-#Examples of "sim" 
-set.seed (1)
-J <- 15
-n <- J*(J+1)/2
-group <- rep (1:J, 1:J)
-mu.a <- 5
-sigma.a <- 2
-a <- rnorm (J, mu.a, sigma.a)
-b <- -3
-x <- rnorm (n, 2, 1)
-sigma.y <- 6
-y <- rnorm (n, a[group] + b*x, sigma.y)
-u <- runif (J, 0, 3)
-dat <- cbind (y, x, group)
-# Linear regression 
-dat <- as.data.frame(dat)
-dat$group <- factor(dat$group)
-M3 <- glm (y ~ x + group, data=dat)
-cases <- expand.grid(x = seq(-2, 2, by=0.1), 
-                     group=seq(1, 14, by=2))
-cases$group <- factor(cases$group)
-sim.results <- gelmansim(mod = M3, newdata = cases, n.sims=200, na.omit=TRUE)
-head(sim.results)
-
-## ----lmautoplot---------------------------------------------------------------
-data(mpg)
-mymod <- lm(cty~displ + cyl + drv, data=mpg)
-autoplot(mymod)
-
-## ----crossplot----------------------------------------------------------------
-sampDat <- data.frame(cbind(x=seq(1,3,by=1), y=sample(LETTERS[6:8], 60, 
-                                                        replace=TRUE)),
-                        fac=sample(LETTERS[1:4], 60, replace=TRUE))
-varnames<-c('Quality','Grade')
-crosstabplot(sampDat, "y", "fac", varnames = varnames,  label = TRUE, 
-             title = "Crosstab Plot", shade = FALSE)
+## -----------------------------------------------------------------------------
+scores <- c(1, 5, 3, 6, "*", 2, 5, "*", "*")
+remove_char(scores, "*")
 
 ## -----------------------------------------------------------------------------
-crosstabplot(sampDat, "y", "fac", varnames = varnames,  label = FALSE, 
-             title = "Crosstab Plot", shade = TRUE)
+leading_zero(c(1, 23, 7, 105), digits = 4)
 
 ## -----------------------------------------------------------------------------
-library(eeptools)
+max_mis(c(7, NA, 3, 2, 0))
+max_mis(c(NA, NA, NA, NA))
+nth_max(c(1:20, 20:1), n = 2)
+
+## -----------------------------------------------------------------------------
+data(stuatt)
+isid(stuatt, vars = c("sid"))
+isid(stuatt, vars = c("sid", "school_year"))
+
+## -----------------------------------------------------------------------------
+set.seed(442)
+enrollment <- rpois(100, lambda = 50)
+cutoff(enrollment, 0.5)  # elements needed to reach 50% of the total
+thresh(enrollment, 10)   # proportion of the total in the 10 largest
+
+## -----------------------------------------------------------------------------
 data("stuatt")
 head(stuatt)
 
